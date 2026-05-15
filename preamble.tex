@@ -1,13 +1,10 @@
-%---------------------------PREAMBLE
-\documentclass[a4paper,10.5pt,oneside]{report} %book format on A4 paper with size 12 font
-\usepackage[margin=2.0cm]{geometry}
-\usepackage{amsmath,amssymb}            %a fairly generic package for mathematical output
+%Preamble
+
 %\usepackage{a4wide}                    %stretch the page margins
 \usepackage{fancyhdr}                   %to customise the header and footer
-%\usepackage{pxfonts}                   %use my usual font style
-%\usepackage{abstract}                  %putting an abstract somewhere
-\usepackage[usenames,dvipsnames]{color} %needs no justification
-%\usepackage{titlesec}                  %change the properties of titles
+\usepackage{pxfonts}                   %use my usual font style
+\usepackage{abstract}                  %putting an abstract somewhere
+\usepackage{titlesec}                  %change the properties of titles
 \usepackage[titletoc]{appendix}         %customise appendices
 \usepackage{pdfpages}                   %insert other pdfs into the document
 \usepackage{enumerate}                  %gives the enumerate environment an optional argument
@@ -23,7 +20,7 @@
 \usepackage{array}                      %used to extend the array and tabular environments
 \usepackage{multirow}                   %make a table entry that will span multiple rows
 \usepackage{graphicx}           %optional arguments for the \includegraphics command
-\usepackage[hang,small,bf]{caption}     %captions under figures
+\usepackage[small,bf]{caption}     %captions under figures
 \usepackage{subcaption}                 %subcaptions
 \usepackage{wrapfig}                    %makes for nicer captions under figures
 \usepackage{sidecap}                    %side captions
@@ -45,11 +42,11 @@
 
 \pagestyle{plain}                       %puts headings on each page, subject to doc style
 %\headheight 15pt                       %distance between header and top margin
-%\lhead{}                               %header is on the left page
+\lhead{}                               %header is on the left page
 \numberwithin{equation}{chapter}        %equations look like (a.b)
-%\numberwithin{equation}{section}       %equations look like (a.b.c)
-%\numberwithin{figure}{section}         %figures look like (a.b.c)
-%\setcounter{chapter}{-1}               %change the chapter seed
+\numberwithin{equation}{section}       %equations look like (a.b.c)
+\numberwithin{figure}{section}         %figures look like (a.b.c)
+\setcounter{chapter}{-1}               %change the chapter seed
 \let\endtocpage\relax                   %no new page after table of contents
 \usepackage{tocloft}
 
@@ -89,3 +86,4 @@
   linkcolor=black,
   urlcolor=black
 }
+

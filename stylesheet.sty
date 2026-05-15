@@ -1,0 +1,138 @@
+%==========================%
+%        PACKAGES          %
+%==========================%
+\usepackage{fancyhdr}  
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+% Math & Symbols
+\usepackage{amsmath, amsfonts, amssymb, amsthm, mathtools, mathrsfs, esint}
+% \usepackage{cancel}          % For strike-through in math
+% \usepackage{pi font}         % For symbols (e.g., \ding)
+
+% Graphics & Figures
+\usepackage{graphicx}        % Include images
+\usepackage{subcaption}      % Subfigures
+\usepackage{tikz}            % TikZ graphics
+\usetikzlibrary{arrows.meta, positioning}
+\usepackage{pgfplots}        % Plots
+    \pgfplotsset{compat=1.18, width=10cm}
+\usepackage[export]{adjustbox}  % Align graphics
+
+% Lists & Enumeration
+\usepackage{enumitem}        % Customizable lists
+
+% Referencing & Links
+\usepackage[hidelinks]{hyperref}  % Clickable refs without colors
+\usepackage{cite}                % Citation formatting
+\usepackage{cleveref}            % Smart cross-referencing
+\usepackage{booktabs}
+% Layout & Formatting
+\usepackage[margin=2cm]{geometry}
+\usepackage{titling}            % Title customization
+\usepackage{afterpage}          % Deferred content placement
+\usepackage{xcolor}             % Colors
+\usepackage{url}                % URL formatting
+\usepackage{qtree}              % Tree diagrams
+
+% Paragraph formatting
+
+%==========================%
+%         TIKZ STYLE       %
+%==========================%
+\tikzstyle{state} = [circle, draw, minimum size=1.2cm, thick, font=\large]
+
+%==========================%
+%      MATH SHORTCUTS      %
+%==========================%
+\newcommand{\R}{\mathbb{R}}     % Real numbers
+\newcommand{\Z}{\mathbb{Z}}     % Integers
+\newcommand{\N}{\mathbb{N}}     % Natural numbers
+\newcommand{\C}{\mathbb{C}}     % Complex numbers
+\newcommand{\Q}{\mathbb{Q}}     % Rational numbers
+
+\newcommand{\pfrac}[2]{\left( \frac{#1}{#2} \right)}   % Parenthesized fraction
+\newcommand{\sqfrac}[2]{\left[ \frac{#1}{#2} \right]}  % Square bracket fraction
+\newcommand{\bfrac}[2]{\frac{\sqbrac{#1}}{\sqbrac{#2}}} 
+
+\newcommand{\paren}[1]{\left( #1 \right)}
+\newcommand{\sqbrac}[1]{\left[ #1 \right]}
+\newcommand{\sqbracc}[1]{\left[ \phantom{\frac{}{}} #1 \phantom{\frac{}{}} \right]}
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\newcommand{\myset}[2]{\left\{ {#1}_1, {#1}_2, \dots, {#1}_{#2} \right\}}
+
+\newcommand{\modu}[1]{\left| #1 \right|}
+\newcommand{\norm}[1]{\modu{\modu{#1}}}
+\newcommand{\intf}[1]{\int_{-\infty}^{\infty} #1 \, dx}
+
+\newcommand{\dd}{\partial}
+\newcommand{\ti}{\times}
+\newcommand{\seq}{\subseteq}
+\newcommand{\var}{\varepsilon}
+\newcommand{\mn}{\mathcal{F}}
+
+\newcommand{\Qed}{\tag*{$\square$}}  % QED box at end of line
+\newcommand{\sq}{\square}
+\newcommand{\heart}{\textcolor{red}{\ding{170}}}
+\newcommand{\cutei}{\mathop{{}\imath}\limits^{\scriptscriptstyle\heartsuit}}
+
+\newcommand{\bigO}[1]{\mathcal{O}\paren{#1}}  % Big O notation
+
+%==========================%
+%      LOGIC SHORTCUTS     %
+%==========================%
+\newcommand{\imp}{\rightarrow}
+\newcommand{\ifff}{\leftrightarrow}
+\newcommand{\nott}{\neg}
+\newcommand{\orr}{\vee}
+\newcommand{\andd}{\wedge}
+\newcommand{\poss}{\lozenge}
+\newcommand{\tf}{\therefore}
+\newcommand{\bs}{\backslash}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\m}[1]{\mathbf{#1}}
+\newcommand{\grad}{\nabla}
+\newcommand{\gradx}[2]{\frac{\dd#1}{\dd x_{#2}}}
+\newcommand{\ms}[1]{\boldsymbol{#1}}
+\newcommand{\todo}[1]{{\huge\textcolor{red}{#1}}}
+%==========================%
+%   CUSTOM ENVIRONMENTS    %
+%==========================%
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{ex}{Example}
+\newtheorem{sentence}{Sentence}[subsection]
+\newtheorem{command}{Command}
+
+%============================%
+%      PHYSICS SHORTCUTS     %
+%============================%
+\usepackage{slashed}                    %for Feynman slash notation
+\usepackage[cdot,mediumqspace,amssymb]{SIunits}  %include SI units package
+\newcommand{\vect}[1]{\boldsymbol{#1}}                   %bold vector
+\newcommand{\mtx}[1]{\smash{\underline{\underline{\mathbf{#1}}}}} %matrix
+\let\vaccent=\v                                          %rename builtin command \v{} to \vaccent{}
+\renewcommand{\v}[1]{\ensuremath{\mathbf{#1}}}           %for vectors
+\newcommand{\gv}[1]{\ensuremath{\mbox{\boldmath$ #1 $}}} %for vectors of Greek letters
+\newcommand{\uv}[1]{\ensuremath{\mathbf{\hat{#1}}}}      %for unit vector
+\newcommand{\abs}[1]{\left| #1 \right|}                  %for absolute value
+\newcommand{\avg}[1]{\left< #1 \right>}                  %for average
+\let\underdot=\d                                         %rename builtin command \d{} to \underdot{}
+\newcommand{\deriv}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}                %for derivatives
+\newcommand{\derivderiv}[2]{\frac{\mathrm{d}^2 #1}{\mathrm{d} #2^2}}               %for double derivatives
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}     %for partial derivatives
+\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}}%for double partial derivatives
+\newcommand{\ket}[1]{| #1 \rangle}                       %for Dirac bras
+\newcommand{\bra}[1]{\langle #1 |}                       %for Dirac kets
+
+\newcommand{\braket}[2]{\langle #1 \vphantom{#2} | #2 \vphantom{#1} \rangle}                                   
+                                                         %for Dirac brackets
+\newcommand{\matrixel}[3]{\left< #1 \vphantom{#2#3} \right| #2 \left| #3 \vphantom{#1#2} \right>}
+                                                         %for Dirac matrix elements
+
+\let\divsymb=\div                                        %rename builtin command \div to \divsymb
+\renewcommand{\div}[1]{\gv{\nabla} \cdot #1}             %for divergence
+\newcommand{\curl}[1]{\gv{\nabla} \times #1}             %for curl
+\newcommand{\sch}{Schr$\ddot{\rm o}$dinger }
